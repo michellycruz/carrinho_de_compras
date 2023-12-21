@@ -38,7 +38,7 @@
         ],
         "eol-last": [
             "error",
-            "always"
+            "never"
         ]
     }
 }
