@@ -1,9 +1,14 @@
 import React from 'react';
+import SearchBar from '../SearchBar/SearchBar';
 
 function Header(){
 
   return(
-    <header>Header</header>
+    <header className="header" style={{backgroundColor: 'red'}}>
+      <div className="container">
+        <SearchBar />
+      </div>
+    </header>
   );
 }
 
