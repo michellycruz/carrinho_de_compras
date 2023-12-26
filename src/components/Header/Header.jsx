@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import '../Header/Header.css';
+import CartButton from '../CartButton/CartButton';
 
 function Header(){
 
@@ -8,7 +9,7 @@ function Header(){
     <header className="header">
       <div className="container">
         <SearchBar />
-        <button>cart</button>
+        <CartButton />
       </div>
     </header>
   );

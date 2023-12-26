@@ -1,0 +1,12 @@
+.cart__button{
+  display: flex;
+  font-size: 1.5em;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  margin-left: 20px;
+}
