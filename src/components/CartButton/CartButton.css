@@ -1,6 +1,6 @@
 .cart__button{
   display: flex;
-  font-size: 1.5em;
+  font-size: 1.8em;
   padding: 5px;
   align-items: center;
   justify-content: center;
@@ -9,4 +9,21 @@
   cursor: pointer;
   position: relative;
   margin-left: 20px;
+  color: #333;
+}
+
+.cart__status{
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 11px;
+  font-weight: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
