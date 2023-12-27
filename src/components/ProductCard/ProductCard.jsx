@@ -1,8 +1,9 @@
 import React from 'react';
-
+import propTypes from 'prop-types';
+import { MdOutlineAddShoppingCart } from 'react-icons/md';
 import '../ProductCard/ProductCard.css';
 
-function ProductCard() {
+function ProductCard({ data }) {
   return ( 
     <section className="product__card">
       <img src="https://http2.mlstatic.com/D_608615-MLU72148589298_102023-W.jpg" alt="product" className="card__image" />
@@ -11,9 +12,15 @@ function ProductCard() {
         <h2 className="card__title">Kindle</h2>
       </div>
 
-      <button type="button" className="btn__add__card">+</button>
+      <button type="button" className="btn__add__card">
+        <MdOutlineAddShoppingCart />
+      </button>
     </section>
   );
 }
 
 export default ProductCard;
+
+ProductCard.propTypes = {
+  data: propTypes.shape({}),
+}.isRequired;
