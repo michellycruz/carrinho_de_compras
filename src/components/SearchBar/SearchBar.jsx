@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import './SearchBar.css';
+import fetchProducts from '../../api/fetchProducs';
 
 function SearchBar() {
 
   const [searchValue, setSearchValue] = useState('');
-  const handleSearch = (event) => {
+  const handleSearch = async (event) => {
     event.preventDefault();
+    const products = await fetchProducts(searchValue);
+    console.log(products);
   };
 
   return ( 
