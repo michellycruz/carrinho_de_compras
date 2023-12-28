@@ -10,6 +10,7 @@ function SearchBar() {
     event.preventDefault();
     const products = await fetchProducts(searchValue);
     console.log(products);
+    setSearchValue('');
   };
 
   return ( 
