@@ -13,7 +13,6 @@ function SearchBar() {
     <form className= "search_bar" onSubmit={handleSearch}>
       <input type="search" value={searchValue} placeholder="Buscar produtos" className="search__input" onChange={ ({target}) => setSearchValue(target.value) } required 
       />
-      { searchValue }
       <button type="submit"className="search__button">
         < IoIosSearch />
       </button>
