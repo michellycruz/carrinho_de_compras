@@ -1,11 +1,11 @@
 import React from 'react';
-import { MdOutlineShoppingCart } from 'react-icons/md';
+import { IoCartOutline } from 'react-icons/io5';
 import '../CartButton/CartButton.css';
 
 function CartButton() {
   return(
     <button type="button" className="cart__button">
-      <MdOutlineShoppingCart />
+      <IoCartOutline />
       <span className="cart__status">1</span>
     </button>
   );

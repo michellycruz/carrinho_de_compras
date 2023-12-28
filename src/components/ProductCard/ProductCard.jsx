@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { MdOutlineAddShoppingCart } from 'react-icons/md';
+import { IoCart } from 'react-icons/io5';
 import '../ProductCard/ProductCard.css';
 import formatCurrency from '../../utils/formatCurrency';
 
@@ -17,7 +17,7 @@ function ProductCard({ data }) {
       </div>
 
       <button type="button" className="btn__add__card">
-        <MdOutlineAddShoppingCart />
+        <IoCart />
       </button>
     </section>
   );
