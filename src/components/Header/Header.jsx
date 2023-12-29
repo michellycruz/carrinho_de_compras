@@ -11,7 +11,7 @@ function Header(){
         <SearchBar />
         <CartButton />
       </div>
-    </header>
+    </header> 
   );
 }
 

@@ -1,15 +1,21 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import './SearchBar.css';
 import fetchProducts from '../../api/fetchProducs';
+import AppContext from '../../context/AppContext';
 
 function SearchBar() {
 
+  const { setProducts } = useContext(AppContext);
   const [searchValue, setSearchValue] = useState('');
+
+
   const handleSearch = async (event) => {
     event.preventDefault();
+
     const products = await fetchProducts(searchValue);
-    console.log(products);
+
+    setProducts(products);
     setSearchValue('');
   };
 
@@ -19,7 +25,7 @@ function SearchBar() {
       />
       <button type="submit"className="search__button">
         < IoIosSearch />
-      </button>
+      </button> 
     </form>
   );
 }
