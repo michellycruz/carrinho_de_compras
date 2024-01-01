@@ -11,13 +11,7 @@ function ProductCard({ data }) {
 
   const { cartItens, setCartItens } = useContext(AppContext);
 
-  const handleAddCart = () => {
-    const updatedCartItens = cartItens;
-
-    updatedCartItens(data);
-
-    setCartItens(updatedCartItens);
-  };
+  const handleAddCart = () => setCartItens([ ...cartItens, data]);
 
   return ( 
     <section className="product__card">
