@@ -5,12 +5,16 @@ import AppContext from '../../context/AppContext';
 
 function CartButton() {
 
-  const { cartItens } = useContext(AppContext);
+  const { cartItens, isCartVisible, setIsCartVisible } = useContext(AppContext);
 
   return(
-    <button type="button" className="cart__button">
+    <button 
+      type="button" 
+      className="cart__button"
+      onClick={() => setIsCartVisible(!isCartVisible)}
+    >
       <IoCartOutline />
-      {cartItens.length > 0 && <span className="cart__status">{cartItens.length}</span>}
+      {cartItens.length > 0 && <span className="cart-status">{cartItens.length}</span>}
     </button>
   );
 }

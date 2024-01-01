@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BsCartDashFill } from 'react-icons/bs';
 import '../CartItem/CartItem.css';
 import formatCurrency from '../../utils/formatCurrency';
 import propTypes from 'prop-types';
+import AppContext from '../../context/AppContext';
 
 function CartItem( { data } ) {
 
-  const {thumbnail, title, price} = data;
+  const {cartItens, setCartItens} = useContext(AppContext);
+  const {id, thumbnail, title, price} = data;
+
+  const handLeRemoveItem = () => {
+    const updatedItens = cartItens.filter((item) => item.id != id);
+    setCartItens(updatedItens);
+  };
 
   return ( 
     <section className="cart-item">
@@ -22,7 +29,9 @@ function CartItem( { data } ) {
 
         <button 
           type="button"
-          className="button-remove-item">
+          className="button-remove-item"
+          onClick={handLeRemoveItem}
+        >
             
           <BsCartDashFill />
         </button>
