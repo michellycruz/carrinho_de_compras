@@ -18,7 +18,7 @@ function CartItem( { data } ) {
 
       <div className="cart-item-content">
         <h3 className="cart-item-title">{title}</h3>
-        <h3 className="cart-item-price">{formatCurrency(price)}</h3>
+        <h3 className="cart-item-price">{formatCurrency(price, 'BRL')}</h3>
 
         <button 
           type="button"

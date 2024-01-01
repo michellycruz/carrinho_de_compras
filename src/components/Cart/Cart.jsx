@@ -9,7 +9,7 @@ function Cart() {
   return ( 
     <section className="cart">
       <div className="cart-items">
-        { cartItens.map((cartItem) => <CartItem key={cartItem.id}/>) }
+        { cartItens.map((cartItem) => <CartItem key={cartItem.id} data={cartItem}/>) }
 
 
       </div>
