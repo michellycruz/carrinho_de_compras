@@ -1,23 +1,30 @@
 import React, {useContext, useState} from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import './SearchBar.css';
-import fetchProducts from '../../api/fetchProducs';
+import fetchProducts from '../../api/fetchProducts';
 import AppContext from '../../context/AppContext';
 
 function SearchBar() {
 
-  const { setProducts, setLoading } = useContext(AppContext);
+  const { setProducts, setLoading, setError } = useContext(AppContext);
   const [searchValue, setSearchValue] = useState('');
 
 
   const handleSearch = async (event) => {
     event.preventDefault();
     setLoading(true);
-    const products = await fetchProducts(searchValue);
 
-    setProducts(products);
-    setLoading(false);
-    setSearchValue('');
+    try {
+      const products = await fetchProducts(searchValue);
+      setProducts(products);
+      setError('');
+    } catch (err) {
+      // Uma busca que falha nao pode deixar a tela girando: mostra o motivo.
+      setError(err.message);
+    } finally {
+      setLoading(false);
+      setSearchValue('');
+    }
   };
 
   return ( 

@@ -9,13 +9,15 @@ function ProductCard({ data }) {
 
   const {title, thumbnail, price} = data;
 
-  const { cartItens, setCartItens } = useContext(AppContext);
+  const { setCartItens } = useContext(AppContext);
 
-  const handleAddCart = () => setCartItens([ ...cartItens, data]);
+  // Atualiza a partir do estado anterior: com [ ...cartItens, data ], dois
+  // cliques seguidos leem o mesmo cartItens e o segundo apaga o primeiro.
+  const handleAddCart = () => setCartItens((itens) => [...itens, data]);
 
   return ( 
     <section className="product__card">
-      <img src={thumbnail.replace(/\w\.jpg/gi, 'W.jpg')} alt="product" className="card__image" />
+      <img src={thumbnail} alt={title} className="card__image" />
       <div className="card__infos">
         <h2 className="card__price">{formatCurrency(price, 'BRL')}</h2>
         <h2 className="card__title">{title}</h2>
