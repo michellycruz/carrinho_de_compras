@@ -39,3 +39,7 @@ npm run build  # build de produção
 ```
 
 Não precisa de chave nem de arquivo `.env`.
+
+O `engines.node` do `package.json` fixa o Node 24. Sem ele o deploy usava a
+versão configurada no painel da Vercel, que era a 18 — descontinuada, e o build
+falhava antes de compilar qualquer coisa.
